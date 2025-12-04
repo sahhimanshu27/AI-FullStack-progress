@@ -1,4 +1,6 @@
-## Phase 1: Programming & Web Fundamentals (2-3 months)
+## Phase 1: Programming & Web Fundamentals
+
+**Demo for this phase - https://sahhimanshu27.github.io/AI-FullStack-progress/phase-1/index.html**
 
 **Core Programming - JavaScript & Python**
 - **JavaScript**: Master ES6+ syntax, async/await, promises, array methods, destructuring, modules.
