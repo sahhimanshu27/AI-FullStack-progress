@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Codes</h1>
+
+        <div class="container">
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f7f7f7; border-radius: 8px;">
+                <h2>How to View JavaScript Output (console.log)</h2>
+            
+                <p>You can view JavaScript logs and script outputs using the browser's Developer Console. Use the shortcuts below:</p>
+            
+                <h3>Chrome / Edge / Brave / Opera</h3>
+                <ul>
+                    <li><strong>Open DevTools:</strong> Ctrl + Shift + I (Windows) / Cmd + Option + I (Mac)</li>
+                    <li><strong>Open Console Directly:</strong> Ctrl + Shift + J (Windows) / Cmd + Option + J (Mac)</li>
+                </ul>
+            
+                <h3>Firefox</h3>
+                <ul>
+                    <li><strong>Open DevTools:</strong> Ctrl + Shift + I / Cmd + Option + I</li>
+                    <li><strong>Open Web Console:</strong> Ctrl + Shift + K / Cmd + Option + K</li>
+                </ul>
+            
+                <h3>Safari (Mac)</h3>
+                <p>First enable the Developer Menu in Safari:<br>
+                   Safari → Preferences → Advanced → check <em>“Show Develop menu in menu bar”</em>.</p>
+            
+                <ul>
+                    <li><strong>Open Console:</strong> Cmd + Option + C</li>
+                    <li><strong>Open DevTools:</strong> Cmd + Option + I</li>
+                </ul>
+            
+                <h3>Where Do JS Logs Appear?</h3>
+                <p>After opening DevTools, click the <strong>Console</strong> tab.  
+                   That’s where all <code>console.log()</code> outputs appear.</p>
+            </div>
+            
+        </div>
+        
+        <!-- 1. -->
+        <div class="method">
+            <h3>1. Hello, World!</h3>
+            <p>Printing Hello, World! to the console.</p>   
+        </div>
+
+        <!-- 2. -->
+        <div class="method">
+            <h3>2. Variables and Data Types</h3>
+            <p>Demonstrating variable declaration and different data types.</p>
+            <pre><code>
+let message;
+message = "Hello, World!";
+console.log(message);
+
+// Declaring multiple variables in one line 
+let user = 'John', age = 25, messageUser = 'Hello';
+
+// Use different lines for better readability
+
+// Constant variable
+const pi = 3.14;
+// pi = 3.14159; // This will cause an error
+
+// Uppercase constants
+
+// There is a widespread practice to use constants as aliases for difficult-to-remember values that are known before execution.
+
+// Such constants are named using capital letters and underscores.
+
+// For instance, let’s make constants for colors in so-called “web” (hexadecimal) format:
+
+const COLOR_RED = "#F00";
+const COLOR_GREEN = "#0F0";
+const COLOR_BLUE = "#00F";
+const COLOR_ORANGE = "#FF7F00";
+
+// ...when we need to pick a color
+let color = COLOR_ORANGE;
+console.log(color); // #FF7F00
+
+let name = "Ilya";
+
+console.log( `hello ${1}` ); // ?
+
+console.log( `hello ${"name"}` ); // ?
+
+console.log( `hello ${name}` ); // ?
+            </code></pre>
+                
+        </div>
+
+        <!-- 3. -->
+        <div class="method">
+            <h3>3. Type Conversion.</h3>
+            <p>Demonstrating type conversion in JavaScript.</p>
+            <pre><code>
+// String Conversion
+let value = true;
+console.log(typeof value); // boolean
+value = String(value); // now value is a string "true"
+console.log(typeof value); // string
+
+// Numeric Conversion
+let str = "123";
+console.log(typeof str); // string
+let num = Number(str); // becomes the number 123
+console.log(typeof num); // number
+
+let ageCon = Number("an arbitrary string instead of a number");
+console.log(ageCon); // NaN, conversion failed
+
+// Boolean Conversion
+console.log(Boolean(1)); // true
+console.log(Boolean(0)); // false
+
+console.log(Boolean("hello")); // true
+console.log(Boolean("")); // false
+            </code></pre>
+        </div>        
+    </div>
+
+    <script src="js/script1.js"></script>
+    <script src="js/variables&dataTypes.js"></script>
+    <script src="js/typeConversion.js"></script>
+</body>
+</html>

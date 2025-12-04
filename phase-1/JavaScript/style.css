@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.method {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.method h3 {
+    color: #667eea;
+    margin-top: 0;
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.output {
+    background: #e8f4f8;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #17a2b8;
+    min-height: 40px;
+}
+
+pre, code {
+    text-align: left;
+}
+
+pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 5px;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre; /* ensures preformatted text */
+}
+
+code {
+    padding: 2px 2px;
+    border-radius: 3px;
+    color: #e8f4f8;
+    font-family: 'Courier New', monospace;
+    display: block; /* THIS forces left alignment and full width */
+}
