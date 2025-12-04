@@ -50,12 +50,22 @@ button:hover {
 }
 
 .output {
-    background: #e8f4f8;
-    padding: 15px;
-    margin-top: 15px;
+    display: none;
+    background: #1e1e1e;
+    color: #00e676;
+    padding: 10px;
     border-radius: 6px;
-    border-left: 4px solid #17a2b8;
-    min-height: 40px;
+    margin-top: 10px;
+    font-family: monospace;
+    border-left: 4px solid #00e676;
+}
+
+.output-header {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
 }
 
 pre, code {

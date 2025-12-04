@@ -18,4 +18,4 @@
 - Learn modern JavaScript tooling: npm/yarn, webpack/Vite basics.
 
 ### Source(s) used for this phase:
-- [JavaScript.info]("https://javascript.info/")
+- [JavaScript.info](https://javascript.info/)

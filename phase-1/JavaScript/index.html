@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        function runCode(blockNumber) {
+            const code = document.getElementById("code" + blockNumber).innerText;
+            const outputBox = document.getElementById("output" + blockNumber);
+        
+            // Reset output
+            outputBox.innerHTML = "";
+            outputBox.style.display = "none";
+        
+            let printedSomething = false;
+        
+            // Custom local console.log
+            const originalLog = console.log;
+            console.log = function(msg) {
+                if (!printedSomething) {
+                    outputBox.style.display = "block";
+                    outputBox.innerHTML = `<div class="output-header">Output</div>`;
+                }
+                printedSomething = true;
+        
+                outputBox.innerHTML += msg + "<br>";
+                originalLog(msg);
+            };
+        
+            try {
+                eval(code);
+            } catch (err) {
+                outputBox.style.display = "block";
+                outputBox.innerHTML = `<div class="output-header">Output</div>`;
+                outputBox.innerHTML += `<span style="color:red;">${err}</span>`;
+            }
+        
+            // Restore real console.log
+            console.log = originalLog;
+        
+            // If nothing was printed → hide the whole box
+            if (!printedSomething) {
+                outputBox.style.display = "none";
+            }
+        }
+        </script>
+        
+        
+        
 </head>
 <body>
     <div class="container">
@@ -40,6 +85,8 @@
                 <h3>Where Do JS Logs Appear?</h3>
                 <p>After opening DevTools, click the <strong>Console</strong> tab.  
                    That’s where all <code>console.log()</code> outputs appear.</p>
+
+                <h3>Note: The output can be viewed by clicking the run button after each code.</h3>
             </div>
             
         </div>
@@ -54,7 +101,7 @@
         <div class="method">
             <h3>2. Variables and Data Types</h3>
             <p>Demonstrating variable declaration and different data types.</p>
-            <pre><code>
+            <pre><code id="code1">
 let message;
 message = "Hello, World!";
 console.log(message);
@@ -93,14 +140,15 @@ console.log( `hello ${"name"}` ); // ?
 
 console.log( `hello ${name}` ); // ?
             </code></pre>
-                
+            <button onclick="runCode(1)">Run</button>
+            <div id="output1" class="output"></div>
         </div>
 
         <!-- 3. -->
         <div class="method">
             <h3>3. Type Conversion.</h3>
             <p>Demonstrating type conversion in JavaScript.</p>
-            <pre><code>
+            <pre><code id="code2">
 // String Conversion
 let value = true;
 console.log(typeof value); // boolean
@@ -123,11 +171,122 @@ console.log(Boolean(0)); // false
 console.log(Boolean("hello")); // true
 console.log(Boolean("")); // false
             </code></pre>
-        </div>        
+            <button onclick="runCode(2)">Run</button>
+            <div id="output2" class="output"></div>
+        </div>   
+        
+        <!-- 4.  -->
+         <div class="method">
+            <h3>4. Conditionals</h3>
+            <p>Sometimes, we need to perform different actions based on different conditions.
+            </p>
+            <p>
+            To do that, we can use the if statement and the conditional operator ?, that’s also called a “question mark” operator.</p>
+
+            <pre><code id="code4">
+// Conditional operator'?'
+
+let ageConditional = 20;
+let accessAllowed = (ageConditional > 18) ? true : false;
+console.log(accessAllowed);
+
+let messageConditional = (ageConditional < 3) ? 'Hi, baby!' :
+    (ageConditional < 18) ? 'Hello!' :
+    (ageConditional < 100) ? 'Greetings!' :
+    'What an unusual age!';
+
+console.log(messageConditional);
+
+// Switch statement
+let a = 2 + 2;
+
+switch (a) {
+    case 3:
+    console.log( 'Too small' );
+    break;
+    case 4:
+    console.log( 'Exactly!' );
+    break;
+    case 5:
+    console.log( 'Too big' );
+    break;
+    default:
+    console.log( "I don't know such values" );
+}
+            </code></pre>
+            <button onclick="runCode(4)">Run</button>
+            <div id="output4" class="output"></div>
+         </div>
+
+         <!-- 5.  -->
+          <div class="method">
+            <h3>5. Functions</h3>
+            <p>Defining and using functions in JavaScript.</p>
+            <p>Syntax:</p>
+            <pre><code>
+function name(parameter1, parameter2, ... parameterN) {
+    // body
+}
+            </code></pre>
+            <pre><code id="code5">
+// Function declaration
+function showMessage() {
+    console.log("Hello, this is a message!");
+}
+showMessage();
+
+// Function with parameters
+function greetUser(name, age) {
+    console.log(`Hello, ${name}! You are ${age} years old.`);
+}
+greetUser("Alice", 30);
+
+// Function with return value
+function sum(a, b) {
+    return a + b;
+}
+let result = sum(5, 10);
+console.log(`The sum is: ${result}`);
+
+
+// Age verification function
+// Shown when the page first loads
+function checkAge(age) {
+    if (age >= 18) {
+      return true;
+    } else {
+      return confirm('Do you have permission from your parents?');
+    }
+  }
+  
+  let ageFunc = 7;
+  
+  if ( checkAge(ageFunc) ) {
+    alert( 'Access granted' );
+  } else {
+    alert( 'Access denied' );
+  }
+
+// Default parameters
+function multiply(a, b = 2) {
+    return a * b;
+}
+console.log(`Multiplication result: ${multiply(5)}`); // b defaults to 2
+
+                
+            </code></pre>
+            <button onclick="runCode(5)">Run</button>
+            <div id="output5" class="output"></div>
+          </div>
+
     </div>
 
+
+    <!-- js imports  -->
     <script src="js/script1.js"></script>
     <script src="js/variables&dataTypes.js"></script>
     <script src="js/typeConversion.js"></script>
+    <script src="js/conditional.js"></script>
+    <script src="js/functions.js"></script>
 </body>
 </html>
