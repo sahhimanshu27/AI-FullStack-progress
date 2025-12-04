@@ -54,6 +54,18 @@
 <body>
     <div class="container">
         <h1>JavaScript Codes</h1>
+        
+        <div class="container" style="margin-bottom: 20px;">
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f7f7f7; border-radius: 8px;">
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is a versatile programming language primarily used for enhancing web pages to provide interactive features. It allows developers to create dynamic content, control multimedia, animate images, and much more.</p>
+            <p>JavaScript can be executed in various environments, including web browsers and server-side platforms like Node.js. It is an essential technology of the World Wide Web, alongside HTML and CSS.</p>
+            <p>This collection of JavaScript code snippets covers fundamental concepts such as variables, data types, type conversion, conditionals, and functions. Each snippet includes a brief explanation and can be executed directly to see the output.</p>
+
+            <h3>Note: This is not a tutorial. It's only for my personal practice, and to motivate myself to cover everything from start.</h3>
+            <p>It represents my commitment to re-learn everything from start.</p>
+        </div>
+        </div>
 
         <div class="container">
             <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f7f7f7; border-radius: 8px;">
@@ -113,7 +125,12 @@ let user = 'John', age = 25, messageUser = 'Hello';
 
 // Constant variable
 const pi = 3.14;
-// pi = 3.14159; // This will cause an error
+try {
+    pi = 3.14159; // This will cause an error
+} catch (error) {
+    console.log("Error caught:", error);
+}
+
 
 // Uppercase constants
 
@@ -288,5 +305,10 @@ console.log(`Multiplication result: ${multiply(5)}`); // b defaults to 2
     <script src="js/typeConversion.js"></script>
     <script src="js/conditional.js"></script>
     <script src="js/functions.js"></script>
+    <script>
+        console.log("------------------------");
+        console.log("--- JavaScript Reloades: ---");
+        console.log("------------------------");
+    </script>
 </body>
 </html>
